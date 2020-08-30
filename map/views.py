@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import render
+from .models import Pointer
+from django.contrib.gis.geos import Point
 import json
 
 
@@ -14,10 +16,16 @@ def click_log(request):
     It allows to display all pointers."""
 
     if request.method == "POST":
-        print("HEREEEEEEE1")
         latlng = json.loads(request.body)
-        print(latlng["lat"])
-        print(latlng["lng"])
+        point = Point(
+            int(latlng["lat"]),
+            int(latlng["lng"])
+        )
+        pointer = Pointer(point)
+        pointer.save()
     if request.method == "GET":
-        print("HEREEEEEEE2")    
-    
+        coords = Pointer.objects.all()
+        context = {
+            "coords":coords,
+        }    
+        return render(request, "map/log.html", context)
