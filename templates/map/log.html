@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="coords">
+        {% for coord in coords %}
+
+            <div class="coord"> {{coord}} </div>
+
+        {% endfor %}
+    </div>
+
+{% endblock %}
