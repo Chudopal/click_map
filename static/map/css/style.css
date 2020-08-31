@@ -1,22 +1,46 @@
 #mapid{
     width: 800px; 
-    height: 600px; 
+    height: 750px; 
     position: relative;
     left: 5%;
 }
 
 .title{
-    color: brown;
+    color: rgb(90, 156, 101);
     font-size: 50px;
     font-family: 'Roboto', sans-serif;
     position: relative;
-    left: 35%;
 }
 
 .main{
     position: absolute;
     left: 400px;
     background-color: rgb(240, 240, 240);
+    text-align: center;
     width: 900px;
     height: 99%;
+}
+
+.log{
+    font-size: 30px;
+    color:  rgb(90, 156, 101);
+    font-family: 'Roboto', sans-serif;
+    position: relative;   
+}
+
+.page{
+    color:rgb(90, 156, 101);;
+}
+
+.coords{
+    margin: 30px;
+    background-color: rgb(231, 230, 230);
+    padding: 0.1px;
+}
+
+.coord{
+    margin: 30px;
+    color: rgb(108, 108, 116);
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
 }

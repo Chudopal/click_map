@@ -2,12 +2,20 @@
 
 {% block content %}
 
-    <div class="coords">
-        {% for coord in coords %}
+<a class="log" href="{% url 'view' %}">Map</a>
 
-            <div class="coord"> {{coord.location.x}} {{coord.location.y}} </div>
+    {% if pointer_list %}
+        
+        <div class="coords">
 
-        {% endfor %}
-    </div>
+            {% for pointer in pointer_list %}
+
+                <div class="coord"> {{pointer.location.x}} {{pointer.location.y}} </div>
+
+            {% endfor %}
+            
+        </div>
+
+    {% endif %}
 
 {% endblock %}
