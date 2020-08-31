@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'click_map.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis', #'django.db.backends.postgresql_psycopg2'
         'NAME': 'click_map',
         'USER': 'admin',
         'PASSWORD': 'password',

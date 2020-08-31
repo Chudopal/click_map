@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.shortcuts import render
 from .models import Pointer
 from django.contrib.gis.geos import Point
 import json
@@ -18,11 +17,22 @@ def click_log(request):
     if request.method == "POST":
         latlng = json.loads(request.body)
         point = Point(
-            int(latlng["lat"]),
-            int(latlng["lng"])
+            float(latlng["lat"]),
+            float(latlng["lng"]),
+            srid=4326
         )
-        pointer = Pointer(point)
+        print(dir(point))
+
+        pointer = Pointer()
+        
+        print(dir(pointer.location))
+
+        pointer.location = point
+        print("HEREEEEEE")
+        print(pointer)
+        print("HEREEEEEE")
         pointer.save()
+        return 302
     if request.method == "GET":
         coords = Pointer.objects.all()
         context = {

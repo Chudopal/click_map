@@ -5,7 +5,7 @@
     <div class="coords">
         {% for coord in coords %}
 
-            <div class="coord"> {{coord}} </div>
+            <div class="coord"> {{coord.location.x}} {{coord.location.y}} </div>
 
         {% endfor %}
     </div>
