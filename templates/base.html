@@ -25,11 +25,11 @@
                   <div class="pagination">
                   
                     <div class="orange-color" style="position: absolute; top:90%; left: 45%;" >
-                        <span class="page-links page">
+                        <span class=" page">
                             {% if page_obj.has_previous %}
                                 <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a>
                             {% endif %}
-                            <span class="page-current" >
+                            <span >
                                 Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
                             </span>
                             {% if page_obj.has_next %}

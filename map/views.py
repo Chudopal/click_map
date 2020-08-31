@@ -12,7 +12,7 @@ def view_map(request):
 
 
 class PointerListView(generic.ListView):
-    """This class accepts post and get requests for pointers. 
+    """This class hanles POST and GET requests for pointers. 
     It allows to display all pointers."""
     
     model = Pointer
